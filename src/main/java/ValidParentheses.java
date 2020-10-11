@@ -1,3 +1,8 @@
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
 /**
  * @Author Richard Lv
  * @Date 2020/10/8 17:54
@@ -14,7 +19,23 @@
  */
 public class ValidParentheses {
     public boolean isValid(String s) {
+        if (s.length()<2) return false;
+        Map<Character,Character> parentheses=new HashMap<>();
+        parentheses.put('(',')');
+        parentheses.put('{','}');
+        parentheses.put('[',']');
 
-        return true;
+        Deque<Character> stack=new LinkedList<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c=s.charAt(i);
+            if (stack.size()>0){
+                if (c==parentheses.get(stack.getFirst())){
+                    stack.poll();
+                }
+            }else{
+                stack.offer(c);
+            }
+        }
+        return stack.size() == 0;
     }
 }
