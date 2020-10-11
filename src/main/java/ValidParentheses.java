@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class ValidParentheses {
     public boolean isValid(String s) {
-        if (s.length()<2) return false;
+        if (s.length()%2!=0) return false;
         Map<Character,Character> parentheses=new HashMap<>();
         parentheses.put('(',')');
         parentheses.put('{','}');
@@ -28,14 +28,16 @@ public class ValidParentheses {
         Deque<Character> stack=new LinkedList<>();
         for (int i = 0; i < s.length(); i++) {
             char c=s.charAt(i);
-            if (stack.size()>0){
-                if (c==parentheses.get(stack.getFirst())){
-                    stack.poll();
+            if (!stack.isEmpty()){
+                if (parentheses.containsKey(stack.peek())&&c==parentheses.get(stack.peek())){
+                    stack.pop();
+                }else{
+                    stack.push(c);
                 }
             }else{
-                stack.offer(c);
+                stack.push(c);
             }
         }
-        return stack.size() == 0;
+        return stack.isEmpty();
     }
 }
