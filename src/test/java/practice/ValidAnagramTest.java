@@ -1,6 +1,7 @@
+package practice;
+
 import org.junit.Assert;
 import org.junit.Test;
-import practice.ValidAnagram;
 
 /**
  * @Author Richard Lv
