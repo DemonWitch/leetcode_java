@@ -1,3 +1,5 @@
+package practice;
+
 /**
  * @Author Richard Lv
  * @Date 2020/10/7 20:35
