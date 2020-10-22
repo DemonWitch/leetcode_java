@@ -19,8 +19,15 @@ package practice;
  * You may assume the string contains only lowercase alphabets.
  */
 public class ValidAnagram {
+
+    /**
+     * 小写字母共26个，创建长度为26的计数数组，下标代表26个字母的位置
+     * 以目标字符串长度依次遍历字符，用unicode码计算当前字符在数组中的位置，
+     * 遍历s的字符时数组下标位置数值+1，与之对应遍历t时-1，
+     * 完成字符串遍历后，遍历计数数组，如果全部值为0，则表示s与t中的各个字符数相同，即为异位词，反之则不是
+     */
     public boolean isAnagram(String s, String t) {
-        if (s.length()!=t.length()) return false;
+        if (s.length()!=t.length()) return false;//如果s与t长度不等，必然不是异位词
         int[] counter=new int[26];
         for (int i = 0; i < s.length(); i++) {
             counter[s.charAt(i)-'a']+=1;// 'A' unicode 65
