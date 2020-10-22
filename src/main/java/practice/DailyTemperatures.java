@@ -17,6 +17,14 @@ import java.util.LinkedList;
  *
  */
 public class DailyTemperatures {
+
+    /**
+     * 构建一个栈，栈中放温度在原数组中的下标
+     * 遍历温度数组，peek栈顶下标查询温度
+     * 若比栈顶温度高，则栈顶pop弹出，并将下标差放入在结果数组中对应（弹出下标）的位置，
+     * 循环比较，直到不比栈顶温度高或栈为空为止，并将该次遍历的下标push入栈
+     * 则是弹出下标需要多少天迎来温度升高的数字
+     */
     public int[] dailyTemperatures(int[] T) {
         if (T.length<=1) return new int[]{0};
         Deque<Integer> stack=new LinkedList<>();
