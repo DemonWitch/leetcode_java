@@ -48,6 +48,7 @@ public class KthSmallestElementInBST {
     private void inorder(TreeNode root,List<Integer> result){
         if (root==null) return;
         inorder(root.left,result);
+        //可优化：因为结果为升序，使用计数，节省ArrayList空间开销，降低空间复杂度，遍历到第k-1个时直接返回结果
         result.add(root.val);
         System.out.println(root.val);
         inorder(root.right,result);
