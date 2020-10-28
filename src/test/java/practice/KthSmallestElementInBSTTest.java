@@ -2,7 +2,7 @@ package practice;
 
 import org.junit.Assert;
 import org.junit.Test;
-import util.TreeNode;
+import util.data_structure.TreeNode;
 
 /**
  * @Author Richard Lv

@@ -1,6 +1,6 @@
 package practice;
 
-import util.ListNode;
+import util.data_structure.ListNode;
 
 /**
  * @Author Richard Lv

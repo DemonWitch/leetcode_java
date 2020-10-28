@@ -2,7 +2,7 @@ package practice;
 
 import org.junit.Assert;
 import org.junit.Test;
-import util.ListNode;
+import util.data_structure.ListNode;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package practice;
 
-import util.TreeNode;
+import util.data_structure.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package util;
+package util.data_structure;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -38,7 +38,7 @@ import java.util.LinkedList;
                 currentNode.left= leftChildNode;
                 queue.offer(leftChildNode);
             }
-
+            if (i>=treeArray.length-1) break;
             currentValue=treeArray[i++];
             if (currentValue!=null){
                 TreeNode rightChildNode =new TreeNode(currentValue);
